@@ -15,9 +15,10 @@ public class ReminderSqliteHelper extends SQLiteOpenHelper {
 	public static final String COLUMN_TIME_WHEN = "time_when";
 	public static final String COLUMN_LOCATION_LATITUDE = "location_latitude";
 	public static final String COLUMN_LOCATION_LONGITUDE = "location_longitude";
-
+	public static final String COLUMN_DONE = "done";
+	
 	private static final String DATABASE_NAME = "reminders.db";
-	private static final int DATABASE_VERSION = 1;
+	private static final int DATABASE_VERSION = 2;
 
 	private static final String DATABASE_CREATE = "CREATE TABLE "
 			+ TABLE_REMINDERS + "(" + COLUMN_ID
@@ -27,7 +28,8 @@ public class ReminderSqliteHelper extends SQLiteOpenHelper {
 			+ COLUMN_TYPE + " TEXT NOT NULL,"
 			+ COLUMN_TIME_WHEN + " INTEGER,"
 			+ COLUMN_LOCATION_LATITUDE + " REAL,"
-			+ COLUMN_LOCATION_LONGITUDE + " REAL"
+			+ COLUMN_LOCATION_LONGITUDE + " REAL,"
+			+ COLUMN_DONE + " INTEGER"
 			+ ");";
 
 	public ReminderSqliteHelper(Context context) {

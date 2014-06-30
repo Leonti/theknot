@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -31,20 +30,11 @@
         android:layout_below="@id/reminder_title"
         android:layout_marginTop="@dimen/form_element_margin" />
 
-    <View
-        android:id="@+id/horizontal_divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@id/reminder_time"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="@dimen/form_element_margin"
-        android:background="?android:attr/dividerVertical" />
-
     <LinearLayout
-        android:layout_below="@id/horizontal_divider"
+        android:id="@+id/buttons_wrapper"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
 
         <Button
             android:id="@+id/button_ok"
@@ -70,5 +60,14 @@
             android:layout_weight="1"
             android:text="@string/reminder_form_button_cancel" />
     </LinearLayout>
-
+    
+    <View
+        android:id="@+id/horizontal_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/buttons_wrapper"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="@dimen/form_element_margin"
+        android:background="?android:attr/dividerVertical" />
 </RelativeLayout>
