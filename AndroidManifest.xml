@@ -26,6 +26,7 @@
             android:name="com.leonti.theknot.ReminderFormActivity"
             android:label="@string/app_name" >
         </activity>
+        <receiver android:name="com.leonti.theknot.notifications.ReminderReceiver" ></receiver>
     </application>
 
 </manifest>

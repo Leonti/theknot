@@ -28,6 +28,7 @@ import android.widget.TimePicker;
 import com.leonti.theknot.DateSelectionAdapter.GetLabel;
 import com.leonti.theknot.dao.ReminderDao;
 import com.leonti.theknot.model.Reminder;
+import com.leonti.theknot.notifications.ReminderNotification;
 
 public class ReminderFormActivity extends Activity {
 
@@ -281,6 +282,8 @@ public class ReminderFormActivity extends Activity {
 		Intent returnIntent = new Intent();
 		returnIntent.putExtra("id", savedReminder.getId());
 
+		ReminderNotification.scheduleNotification(savedReminder, ReminderFormActivity.this);
+		
 		setResult(RESULT_OK, returnIntent);
 		finish();
 	    }

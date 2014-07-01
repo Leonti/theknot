@@ -15,6 +15,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import com.leonti.theknot.dao.ReminderDao;
 import com.leonti.theknot.model.Reminder;
+import com.leonti.theknot.notifications.ReminderNotification;
 
 public abstract class AbstractRemindersFragment extends Fragment {
     
@@ -49,6 +50,8 @@ public abstract class AbstractRemindersFragment extends Fragment {
 		    @Override
 		    public void onClick(DialogInterface dialog, int position) {
 		        
+			ReminderNotification.removeNotification(reminder, getActivity());
+			
 			reminderDao.remove(reminder.getId());
 			reminderListAdapter.setReminders(readReminders());
 		    }
